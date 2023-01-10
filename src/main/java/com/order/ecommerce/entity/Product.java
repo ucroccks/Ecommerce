@@ -1,41 +1,45 @@
 package com.order.ecommerce.entity;
 
-import lombok.Data;
-
-import javax.persistence.Id;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.OneToMany;
-import javax.persistence.FetchType;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import lombok.Data;
 
 @Data
 @Entity
 @Table(name = "ecommerce_product")
 public class Product implements Serializable {
 
-    @Id
-    @Column(name = "product_id", nullable = false, unique = true)
-    private String productId;
+	private static final long serialVersionUID = 10l;
 
-    @Column(name = "sku", nullable = false)
-    private String sku;
+	@Id
+	@Column(name = "product_id", nullable = false, unique = true)
+	private String productId;
 
-    @Column(name = "title", nullable = false)
-    private String title;
+	@Column(name = "sku", nullable = false)
+	private String sku;
 
-    @Column(name = "description", nullable = false)
-    private String description;
+	@Column(name = "title", nullable = false)
+	private String title;
 
-    @Column(name = "price", nullable = false)
-    private double price;
+	@Column(name = "description", nullable = false)
+	private String description;
 
-    @Column(name = "createdAt", nullable = false)
-    private LocalDate createdAt;
+	@Column(name = "price", nullable = false)
+	private BigDecimal price;
 
-    @OneToMany(targetEntity = OrderItem.class, fetch = FetchType.LAZY, mappedBy = "product")
-    private List<OrderItem> orderItems;
+	@Column(name = "createdAt", nullable = false)
+	private LocalDateTime createdAt;
+
+	@OneToMany(targetEntity = OrderItem.class, fetch = FetchType.LAZY, mappedBy = "product")
+	private List<OrderItem> orderItems;
 }

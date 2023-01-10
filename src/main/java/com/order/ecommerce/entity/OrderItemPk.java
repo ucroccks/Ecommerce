@@ -14,7 +14,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class OrderItemPk implements Serializable {
 
-    private static long serialVersionUID = 5074947294298476737L;
+	private static final long serialVersionUID = 10l;
 
     @Column(name = "product_id", nullable = false)
     private String productId;

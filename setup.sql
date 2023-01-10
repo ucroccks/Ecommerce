@@ -1,19 +1,19 @@
 create table if not exists ecommerce_payment
 (
     payment_id          varchar(60)     primary key,
-    amount              double precision not null,
-    confirmation_number varchar(60)      not null,
-    created_at          date             not null,
-    payment_mode        varchar(60)      not null,
-    payment_status      varchar(60)      not null
+    amount              NUMERIC (22, 2) not null,
+    confirmation_number varchar(60)     not null,
+    created_at          timestamp       not null,
+    payment_mode        varchar(60)     not null,
+    payment_status      varchar(60)     not null
 );
 
 create table if not exists ecommerce_product
 (
     product_id  varchar(60)     primary key,
-    created_at  date            not null,
+    created_at  timestamp       not null,
     description varchar(60)     not null,
-    price       double precision not null,
+    price       NUMERIC (22, 2) not null,
     sku         varchar(60)     not null,
     title       varchar(60)     not null
 );
@@ -24,7 +24,7 @@ create table if not exists ecommerce_address
     address1       varchar(60) not null,
     address2       varchar(60) not null,
     city           varchar(60) not null,
-    created_at     date        not null,
+    created_at     timestamp   not null,
     email          varchar(60) not null,
     phone          varchar(60) not null,
     state          varchar(60) not null,
@@ -37,12 +37,12 @@ create table if not exists ecommerce_order
     created_at          timestamp,
     customer_id         varchar(60),
     order_status        varchar(60),
-    shipping_charges    double precision,
+    shipping_charges    NUMERIC (22, 2),
     shipping_mode       varchar(60),
-    sub_total           double precision,
-    tax                 double precision,
+    sub_total           NUMERIC (22, 2),
+    tax                 NUMERIC (22, 2),
     title               varchar(60),
-    total_amt           double precision,
+    total_amt           NUMERIC (22, 2),
     payment_id          varchar(60),
     billing_address_id  varchar(60),
     shipping_address_id varchar(60),

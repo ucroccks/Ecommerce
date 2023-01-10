@@ -13,6 +13,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Table(name = "ecommerce_order_item")
 public class OrderItem implements Serializable {
+	
+	private static final long serialVersionUID = 10l;
 
     @EmbeddedId
     private OrderItemPk orderItemPk;
@@ -26,5 +28,5 @@ public class OrderItem implements Serializable {
     private Order order;
 
     @Column(name = "quantity", nullable = false)
-    private String quantity;
+    private Integer quantity;
 }

@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 @AutoConfigureEmbeddedDatabase
 @AutoConfigureMockMvc
 @Sql("/product/insert_prerequisite_records.sql")
-public class ProductIntegrationTest {
+class ProductIntegrationTest {
 
     @Autowired
     private MockMvc mockMvc;
