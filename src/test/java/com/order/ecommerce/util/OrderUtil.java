@@ -1,5 +1,6 @@
 package com.order.ecommerce.util;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.order.ecommerce.dto.AddressDto;
@@ -16,19 +17,19 @@ public class OrderUtil {
     public static OrderDto createTestOrder() {
         return new OrderDto(
                 "1",
-                6.0,
-                10.0,
-                2.0,
-                2.0,
+                BigDecimal.valueOf(6.0),
+                BigDecimal.valueOf(10.0),
+                BigDecimal.valueOf(2.0),
+                BigDecimal.valueOf(2.0),
                 "test",
                 ShippingMode.DELIVERY.name(),
-                10.0,
+                BigDecimal.valueOf(10.0),
                 PaymentMode.CREDIT.name(),
                 createAddress(),
                 createAddress(),
                 List.of(
-                        new OrderItemDto("101", "10"),
-                        new OrderItemDto("102", "10")
+                        new OrderItemDto("101", 10),
+                        new OrderItemDto("102", 10)
                 ),
                 OrderStatus.RECEIVED.name()
         );

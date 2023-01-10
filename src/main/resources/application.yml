@@ -37,6 +37,8 @@ logging:
   level:
     ROOT: info
     org.hibernate.sql: info
+springdoc:
+  override-with-generic-response: false
 
 
 ---

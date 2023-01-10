@@ -28,6 +28,7 @@ dependencies {
 
     /* spring boot */
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation'
     testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 
     /* using spring doc instead of springfox */
@@ -53,7 +54,7 @@ dependencies {
     /* mapstruct */
     implementation group: 'org.mapstruct', name: 'mapstruct', version: "${mapStructVersion}"
     annotationProcessor group: 'org.mapstruct', name: 'mapstruct-processor', version: "${mapStructVersion}"
-
+	
     /* embeddedDB for tests */
     testImplementation group: 'io.zonky.test', name: 'embedded-postgres', version: "${embeddedPostgresVersion}"
     testImplementation group: 'io.zonky.test', name: 'embedded-database-spring-test', version: "${embeddedDBTestVersion}"
