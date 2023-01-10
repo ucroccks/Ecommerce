@@ -4,6 +4,22 @@ Rewritten application from https://github.com/egen-engineering/ecommerce-kotlin
 
 This service interacts with postgresDB to perform CRUD ops for order data
 
+## Improvements
+1. Added Global Exception handler.
+2. Handled the Not found scenario for Product and Order.
+3. Implemented validations using annotations.
+4. Changed currency data type to Big Decimal.
+5. Refactored OrderStatus to use enum.
+6. Updated Swagger doc to cover above changes.
+
+## Proposed changes (did not covered due to lack of time) 
+1. API Security layer.
+2. Test case coverage.
+3. Constants and validation messages refactoring.
+4. Considering microservice architecture this project can be broken into two separate services
+   product and order.
+
+
 #### Make sure Java 17 and Docker is installed on your machine (https://www.docker.com/products/docker-desktop/)
 
 ## Building the app
@@ -42,3 +58,4 @@ Note:
 
 ## Swagger : Use to validate API end points
 http://localhost:8080/order-ecommerce/swagger-ui/index.html
+
