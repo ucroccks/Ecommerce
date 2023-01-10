@@ -1,10 +1,21 @@
 package com.order.ecommerce.enums;
 
 public enum PaymentStatus {
-    PROCESSING,
+    
+	PROCESSING("PROCESSING"),
 
-    PAID,
+    PAID("PAID"),
 
-    REFUNDED
+    REFUNDED("PAID");
+    
+    private final String value;
+
+	PaymentStatus(String value) {
+		this.value = value;
+	}
+
+	public String getString() {
+		return value;
+	}
 
 }

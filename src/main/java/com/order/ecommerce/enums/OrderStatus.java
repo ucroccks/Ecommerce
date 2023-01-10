@@ -1,17 +1,35 @@
 package com.order.ecommerce.enums;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 public enum OrderStatus {
 
-    RECEIVED,
+	RECEIVED("RECEIVED"),
 
-    PROCESSING,
+	PROCESSING("PROCESSING"),
 
-    SHIPPED,
+	SHIPPED("SHIPPED"),
 
-    COMPLETED,
+	COMPLETED("COMPLETED"),
 
-    CANCELLED,
+	CANCELLED("CANCELLED"),
 
-    REFUNDED
+	REFUNDED("REFUNDED");
+
+	private final String value;
+
+	OrderStatus(String value) {
+		this.value = value;
+	}
+
+	public String getString() {
+		return value;
+	}
+
+	public static Optional<OrderStatus> getOrderStatus(String status) {
+		return Arrays.stream(OrderStatus.values())
+				.filter(orderStatus -> orderStatus.toString().equalsIgnoreCase(status)).findFirst();
+	}
 
 }
